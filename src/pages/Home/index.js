@@ -26,11 +26,11 @@ class Home extends Component {
     this.setState({ produtcs: data });
   }
 
-  handleAddProduct = product => {
+  handleAddProduct = id => {
     // eslint-disable-next-line react/prop-types
-    const { addToCart } = this.props;
+    const { addToCartRequest } = this.props;
 
-    addToCart(product);
+    addToCartRequest(id);
   };
 
   render() {
@@ -46,7 +46,7 @@ class Home extends Component {
             <span>{product.priceFormatted}</span>
             <button
               type="button"
-              onClick={() => this.handleAddProduct(product)}
+              onClick={() => this.handleAddProduct(product.id)}
             >
               <div>
                 <MdShoppingCart size={16} color="#FFF" />
